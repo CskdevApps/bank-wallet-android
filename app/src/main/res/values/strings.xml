@@ -14,7 +14,7 @@
     <string name="welcome_btn_create_wallet">New Wallet</string>
     <string name="welcome_btn_import_wallet">Import Wallet</string>
 
-    <string name="restore_title">Enter Secret Keys</string>
+    <string name="restore_title">Enter Secret Key</string>
     <string name="restore_validation_failed">Words do not match</string>
 
     <string name="backup_words_title">Secret Key</string>
