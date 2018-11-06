@@ -50,7 +50,7 @@
     <string name="receive_copy">رونوشت</string>
     <string name="timestamp_just_now">همين آلان</string>
     <string name="timestamp_min_ago">%d؜دقيقه پيش</string>
-    <string name="timestamp_hours_ago">%dساعتپيش</string>
+    <string name="timestamp_hours_ago">%dساعت. پيش</string>
     <string name="timestamp_today">امروز</string>
     <string name="timestamp_yesterday">ديروز</string>
     <string name="transactions_title">معاملات</string>
