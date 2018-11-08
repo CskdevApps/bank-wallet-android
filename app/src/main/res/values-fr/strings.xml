@@ -88,7 +88,7 @@
     <string name="settings_import_wallet">Importer le porte-monnaie</string>
     <string name="settings_unlink_from_this_device">Supprimer de cet appareil</string>
     <string name="settings_language">Langue</string>
-    <string name="settings_about">Sur</string>
+    <string name="settings_about">À propos de</string>
     <string name="settings_light_mode">Mode lumineux</string>
     <string name="settings_push_notifications">Notifications Push</string>
     <string name="settings_error_fingerprint_not_enabled">Empreinte digitale n\'est pas activé</string>
@@ -103,7 +103,7 @@
     <string name="settings_security_import_wallet_confirmation_2">Assurez-vous de disposer de la clé secrète, sinon vous ne pourrez plus accéder aux fonds.</string>
     <string name="settings_currency_switcher_title">Devise de Base</string>
     <string name="settings_language_title">Langue</string>
-    <string name="settings_about_title">Sur</string>
+    <string name="settings_about_title">À propos de</string>
     <string name="settings_about_terms_privacy_subtitle">Terms &amp; Confidentialité:</string>
     <string name="settings_about_terms_privacy_text">Vos fonds sont stockées dans l’application Bank Wallet. Pas sur des serveurs externes.
 \n\nBANK Wallet ne stocke pas et collecte pas des informations privées.
