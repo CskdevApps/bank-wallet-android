@@ -88,7 +88,7 @@
     <string name="settings_import_wallet">Geldbörse Importieren</string>
     <string name="settings_unlink_from_this_device">Verknüpfung mit diesem Gerät aufheben</string>
     <string name="settings_language">Sprache</string>
-    <string name="settings_about">Über</string>
+    <string name="settings_about">Info</string>
     <string name="settings_light_mode">Licht Modus</string>
     <string name="settings_push_notifications">Benachrichtigungen</string>
     <string name="settings_error_fingerprint_not_enabled">Fingerabdruck Nicht Aktivieren</string>
@@ -103,7 +103,7 @@
     <string name="settings_security_import_wallet_confirmation_2">Stellen Sie sicher, Sie haben ihre geheimen Offlineschlüssel oder Sie werden nicht in der Lage, den Zugang zu Mitteln darauf in Zukunft.</string>
     <string name="settings_currency_switcher_title">Basiswährung</string>
     <string name="settings_language_title">Sprache</string>
-    <string name="settings_about_title">Über</string>
+    <string name="settings_about_title">Info</string>
     <string name="settings_about_terms_privacy_subtitle">ANB &amp; Datenschutz:</string>
     <string name="settings_about_terms_privacy_text">Deine Mittel sind in der BANK Wallet app gespeichert. Nicht auf irgendwelche externen Servern.
 \n\nBANK Brieftasche nicht speichern oder keine privaten Informationen zu sammeln.
