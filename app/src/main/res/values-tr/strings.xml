@@ -119,11 +119,11 @@
 \n &#8226; güncel döviz kurlarını depolar, 
 \n &#8226; döviz bilgilerini depolar, 
 \n &#8226; \"tavsiye edilen\" hesap işlemi ücretini depolar, 
-\n &#8226; stores a list of supported base currencies desteklenen  
-\n &#8226; stores public blockchain dada 
-        \n\n2. CryptoCompare.com - used to obtain current market exchange rates. 
-\n\n3. Etherscan.io - used to retrieve a list of past transactions for a given Ethereum address. 
-\n\n4. Infura.io - a public gateway to Ethereum Blockchain.</string>
+\n &#8226; desteklenen dövizlerin listesini depolar, 
+\n &#8226; halka açık Blockchain bilgisini depolar 
+        \n\n2. CryptoCompare.com - dövizlerin market değerlerini güncellemek için. 
+\n\n3. Etherscan.io - istenilen bir Ethereum adresinin geçmiş ödemelerinin listesi için.
+\n\n4. Infura.io - Ethereum Blockchain için halka açık geçiş.</string>
     <string name="alert_keys_invalidated_title">Android anahtar deposu hatası</string>
     <string name="alert_keys_invalidated_description">Android cihazınızın kilidi değiştirildiğinden cüzdan bilginizi tutan şifreli dosya artık geçersiz</string>
     <string name="alert_no_device_lock_title">Uyarı</string>
