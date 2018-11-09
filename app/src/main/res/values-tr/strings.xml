@@ -105,12 +105,12 @@
     <string name="settings_language_title">Dil</string>
     <string name="settings_about_title">Hakkında</string>
     <string name="settings_about_terms_privacy_subtitle">Şartlar &amp; Gizlilik Politikası:</string>
-    <string name="settings_about_terms_privacy_text">Hesap bilgisi sadece BANKA Cüzdanı uygulamasında tutulur. Sunucuda değil.
-\n\nBANKA Cüzdanı, hiçbir şekilde kişisel bilgi toplamaz.
-\n\nBANKA Cüzdanı, herhangi bir sunucuya veya kuruma ihtiyaç duymaz.
+    <string name="settings_about_terms_privacy_text">Hesap bilgisi sadece BANK Wallet uygulamasında tutulur. Sunucuda değil.
+\n\nBANK Wallet, hiçbir şekilde kişisel bilgi toplamaz.
+\n\nBANK Wallet, herhangi bir sunucuya veya kuruma ihtiyaç duymaz.
 \n\nİnternet bağlantısı bulunduğu sürece her yerde çalışabilir.
 \n\n3. şahsın herhangi bir kullanıcıyı engellemesi veya sistemden atması imkansızdır.
-\n\nBANKA Cüzdanı açık kaynaklıdır, kodu herkese açıktır.
+\n\nBANK Wallet açık kaynaklıdır, kodu herkese açıktır.
 \n\nProgramda gözden kaçmış hatalar olabilir. Lütfen cüzdanınızı Gizli Anahtar ile yedekleyip Gizli Anahtarı güvenli bir yerde tutun!</string>
     <string name="settings_about_dependencies_subtitle">Gereksinimler:</string>
     <string name="settings_about_dependencies_text">Banka Cüzdanı uygulaması ihtiyaç duyduğu bazı kritik olmayan bilgileri 3. şahıs kaynaklardan almaktadır.
