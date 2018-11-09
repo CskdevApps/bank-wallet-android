@@ -96,7 +96,7 @@
     <string name="settings_info_app_name_with_version">كيف پول بانك %s</string>
     <string name="settings_info_link">https://horizontalsystems.io</string>
     <string name="settings_security_fingerprint">اثر انگشت</string>
-    <string name="settings_security_change_pin">Edit PIN</string>
+    <string name="settings_security_change_pin">ويرايش پين</string>
     <string name="settings_security_backup_wallet">پيشتيبان گيري كيف پول</string>
     <string name="unlock_page_enter_your_pin">پين را وارد كنيد</string>
     <string name="settings_security_import_wallet_confirmation_1">اين اكشن از اين دستگاه و پول كيف ثبت شده خاظر حذف ميشود.</string>
@@ -152,12 +152,12 @@
     <string name="set_pin_title">تعيين پين</string>
     <string name="set_pin_description">پين شما استعمال خواهد شد براي باز نمودن اپليكيشن</string>
     <string name="set_pin_error_short_pin">لطفلاً تمام ارقام را وارد كنيد.</string>
-    <string name="set_pin_confirm_title">Confirm PIN</string>
+    <string name="set_pin_confirm_title">تأیید پین</string>
     <string name="set_pin_confirm_description">پين شما براي باز نمودن اپليكشين و ارسال پول استعمال خواهد شد</string>
     <string name="set_pin_success">پين قفل نمودن با موفقيت انجام شد!</string>
     <string name="set_pin_error_pins_dont_match">پين درست نبود. دوباره كوشش كنيد.</string>
     <string name="set_pin_error_failed_to_save_pin">خطا رخ داده است وقتي ثبت نمودن پين. لطفاً,دوباره كوشش كنيد.</string>
-    <string name="edit_pin_auth_title">Edit PIN</string>
+    <string name="edit_pin_auth_title">ويرايش پين</string>
     <string name="edit_pin_auth_description">پين حال را وارد كنيد</string>
     <string name="edit_pin_title">پين قبلي را وارد كنيد</string>
     <string name="edit_pin_description">پين شما براي باز نمودن كيف شما استفاده خواهد شد</string>
