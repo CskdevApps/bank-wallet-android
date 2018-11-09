@@ -96,7 +96,7 @@
     <string name="settings_info_app_name_with_version">Bank Wallet %s</string>
     <string name="settings_info_link">https://horizontalsystems.io</string>
     <string name="settings_security_fingerprint">Parmak izi</string>
-    <string name="settings_security_change_pin">PİN\'i değiştir</string>
+    <string name="settings_security_change_pin">Edit PIN</string>
     <string name="settings_security_backup_wallet">Cüzdanı yedekle</string>
     <string name="unlock_page_enter_your_pin">PİN girin</string>
     <string name="settings_security_import_wallet_confirmation_1">Bu işlemle, cüzdan cihazdan kaldırılacak.</string>
@@ -152,12 +152,12 @@
     <string name="set_pin_title">PIN oluştur</string>
     <string name="set_pin_description">PİN, uygulama kilidini açmak için kullanılacak</string>
     <string name="set_pin_error_short_pin">Lütfen bütün rakamları giriniz.</string>
-    <string name="set_pin_confirm_title">Tekrar girin</string>
+    <string name="set_pin_confirm_title">Confirm PIN</string>
     <string name="set_pin_confirm_description">PİN, program\'ı açmak ve para göndermek için kullanılacak</string>
     <string name="set_pin_success">Kilit PİN\'i başarıyla oluşturuldu!</string>
     <string name="set_pin_error_pins_dont_match">PİN uyuşmuyor. Tekrar deneyin.</string>
     <string name="set_pin_error_failed_to_save_pin">PİN kaydedilirken hata oldu. Lütfen tekrar deneyin.</string>
-    <string name="edit_pin_auth_title">PIN oluştur</string>
+    <string name="edit_pin_auth_title">Edit PIN</string>
     <string name="edit_pin_auth_description">Şu an kullandığınız PİN\'i girin</string>
     <string name="edit_pin_title">Yeni PİN gerin</string>
     <string name="edit_pin_description">PİN, uygulama kilidini açmak ve para göndermek için kullanılacak</string>
