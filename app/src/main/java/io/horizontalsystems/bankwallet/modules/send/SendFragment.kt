@@ -68,7 +68,7 @@ class SendFragment : DialogFragment() {
         mDialog?.window?.setGravity(Gravity.BOTTOM)
 
         rootView.findViewById<View>(R.id.btnScan)?.setOnClickListener {
-            viewModel.delegate.onScanClick()
+//            viewModel.delegate.onScanClick()
         }
 
         context?.let {
@@ -113,7 +113,7 @@ class SendFragment : DialogFragment() {
 
         val textChangeListener = object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                viewModel.delegate.onAmountEntered(s?.toString())
+//                viewModel.delegate.onAmountEntered(s?.toString())
                 updateSendBtnState()
             }
 
@@ -125,7 +125,7 @@ class SendFragment : DialogFragment() {
         amountTxt.addTextChangedListener(textChangeListener)
 
         rootView.findViewById<Button>(R.id.btnPaste)?.setOnClickListener {
-            viewModel.delegate.onPasteClick()
+//            viewModel.delegate.onPasteClick()
         }
 
         paymentRefTxt = rootView.findViewById(R.id.txtPaymentRef)
@@ -166,7 +166,7 @@ class SendFragment : DialogFragment() {
         }
 
         sendButton?.setOnClickListener {
-            viewModel.delegate.onSendClick(addressTxt.text.toString())
+//            viewModel.delegate.onSendClick(addressTxt.text.toString())
         }
 
         viewModel.startScanLiveEvent.observe(this, Observer {

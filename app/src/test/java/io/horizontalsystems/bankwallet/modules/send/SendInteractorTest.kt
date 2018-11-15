@@ -28,37 +28,39 @@ class SendInteractorTest {
 
     @Before
     fun setUp() {
-        RxBaseTest.setup()
         interactor.delegate = delegate
     }
 
-    @Test
-    fun getCopiedText() {
-        interactor.getCopiedText()
+//    @Test
+//    fun fetchInitialState_hasRate() {
+//        val baseCurrency = Currency("USD", "$")
+//        val rate = Rate()
+//
+//        whenever(state.coin).thenReturn(coin)
+//        whenever(currencyManager.baseCurrency).thenReturn(baseCurrency)
+//        whenever(rateManager.rateForCoin(coin, baseCurrency.code)).thenReturn(rate)
+//
+//        interactor.fetchInitialState()
+//
+//        verify(delegate).amountTypeChanged(state)
+//    }
 
-        verify(clipboardManager).getCopiedText()
-    }
-
-    @Test
-    fun returnCopiedText() {
-        val copiedText = "copied_address"
-
-        whenever(clipboardManager.getCopiedText()).thenReturn(copiedText)
-
-        Assert.assertEquals(copiedText, interactor.getCopiedText())
-    }
-
-    @Test
-    fun fetchExchangeRate() {
-        val coin = Bitcoin()
-
-        whenever(exchangeRateManager.getExchangeRates()).thenReturn(exchangeRates)
-        whenever(bitcoinAdapter.coin).thenReturn(coin)
-
-        interactor.fetchExchangeRate()
-
-        verify(delegate).didFetchExchangeRate(10_000.0)
-    }
+//    @Test
+//    fun fetchInitialState() {
+//        val baseCurrency = Currency("USD", "$")
+//        val rate = Rate()
+//
+//        whenever(state.coin).thenReturn(coin)
+//        whenever(currencyManager.baseCurrency).thenReturn(baseCurrency)
+//        whenever(rateManager.rateForCoin(coin, baseCurrency.code)).thenReturn(rate)
+//
+//        interactor.fetchInitialState()
+//
+//        verify(delegate).amountTypeChanged(state)
+//        verify(delegate).amountChanged(state)
+//        verify(delegate).convertedAmountChanged(state, rate)
+//        verify(delegate).convertedAmountChanged(state, rate)
+//    }
 
     @Test
     fun send() {

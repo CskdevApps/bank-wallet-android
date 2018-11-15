@@ -1,106 +1,84 @@
 package io.horizontalsystems.bankwallet.modules.send
 
-import io.horizontalsystems.bankwallet.R
-import io.horizontalsystems.bankwallet.entities.Currency
-import io.horizontalsystems.bankwallet.viewHelpers.NumberFormatHelper
-import java.text.NumberFormat
-import java.text.ParseException
-
 class SendPresenter(
         private val interactor: SendModule.IInteractor,
         private val router: SendModule.IRouter,
-        private val baseCurrency: Currency) : SendModule.IViewDelegate, SendModule.IInteractorDelegate {
+        private val viewItemFactory: StateViewItemFactory,
+        private val state: SendModule.State
+) : SendModule.IViewDelegate {
 
     var view: SendModule.IView? = null
 
-    private var enteredAmount: Double = 0.0
-    private var fiatAmount: Double? = null
-    private var cryptoAmount: Double? = null
-    private var exchangeRate = 0.0
-
-    lateinit var coinCode: String
-
     override fun onViewDidLoad() {
-        coinCode = interactor.getCoinCode()
-        updateAmounts()
+        view?.let { view ->
+            val viewItem = viewItemFactory.viewItemForState(state)
 
-        interactor.fetchExchangeRate()
-    }
-
-    override fun didFetchExchangeRate(exchangeRate: Double) {
-        this.exchangeRate = exchangeRate
-        refreshAmountHint()
-    }
-
-    override fun didFailToSend(exception: Exception) {
-        view?.showError(getError(exception))
-    }
-
-    override fun didSend() {
-        view?.showSuccess()
-    }
-
-    override fun onScanClick() {
-        router.startScan()
-    }
-
-    override fun onPasteClick() {
-        val copiedText = interactor.getCopiedText()
-        view?.setAddress(copiedText)
-    }
-
-    override fun onAmountEntered(amount: String?) {
-        val numberFormat = NumberFormat.getInstance()
-        val number = try {
-            numberFormat.parse(amount)
-        } catch (ex: ParseException) {
-            null
+            view.setAmountType(viewItem.amountType)
+            view.setAmount(viewItem.amount)
+            view.setSwitchButtonEnabled(viewItem.switchButtonEnabled)
+            view.setAmountInfo(viewItem.amountInfo)
+            view.setAddressInfo(viewItem.addressInfo)
+            view.setFee(viewItem.fee)
+            view.setConvertedFee(viewItem.convertedFee)
+            view.setSendButtonEnabled(viewItem.sendButtonEnabled)
         }
-        enteredAmount = number?.toDouble() ?: 0.0
-        refreshAmountHint()
     }
 
-    override fun onAddressEntered(address: String?) {
-        view?.showAddressWarning(address?.let { !interactor.isValid(it) } ?: false)
+    override fun onAmountChanged(amount: Double) {
+        state.amount = amount
+
+        val viewItem = viewItemFactory.viewItemForState(state)
+
+        view?.setAmountInfo(viewItem.amountInfo)
+        view?.setFee(viewItem.fee)
+        view?.setConvertedFee(viewItem.convertedFee)
+        view?.setSendButtonEnabled(viewItem.sendButtonEnabled)
     }
 
-    override fun onSendClick(address: String) {
-        cryptoAmount?.let { interactor.send(address, it) }
+    override fun onSwitchClicked() {
+        interactor.rate?.let {rate ->
+            when (state.inputType) {
+                SendModule.InputType.COIN -> {
+                    state.inputType = SendModule.InputType.CURRENCY
+                    state.amount = state.amount * rate
+                }
+                SendModule.InputType.CURRENCY -> {
+                    state.inputType = SendModule.InputType.COIN
+                    state.amount = state.amount / rate
+                }
+            }
+        }
+
+        val viewItem = viewItemFactory.viewItemForState(state)
+
+        view?.setAmountType(viewItem.amountType)
+        view?.setAmount(viewItem.amount)
+        view?.setAmountInfo(viewItem.amountInfo)
+
     }
 
-    private fun updateAmounts() {
-        updateAmountView()
-        updateAmountHintView()
+    override fun onPasteClicked() {
+        interactor.addressFromClipboard?.let { onAddressChange(it) }
     }
 
-    private fun refreshAmountHint() {
-        cryptoAmount = enteredAmount
-        fiatAmount = enteredAmount * exchangeRate
-        updateAmountHintView()
+
+    override fun onScanAddress(address: String) {
+        onAddressChange(address)
     }
 
-    private fun updateAmountView() {
-        val amount = cryptoAmount ?: 0.0
-        val amountStr = formatCryptoAmount(amount)
-
-        view?.setAmount(if (amount > 0.0) amountStr else null)
+    override fun onDeleteClicked() {
+        onAddressChange(null)
     }
 
-    private fun updateAmountHintView() {
-        val amountStr = formatFiatAmount(fiatAmount ?: 0.0)
+    private fun onAddressChange(address: String?) {
+        state.address = address
 
-        view?.setAmountHint("${baseCurrency.symbol} $amountStr")
+        val viewItem = viewItemFactory.viewItemForState(state)
+
+        view?.setAddressInfo(viewItem.addressInfo)
+        view?.setFee(viewItem.fee)
+        view?.setConvertedFee(viewItem.convertedFee)
+        view?.setSendButtonEnabled(viewItem.sendButtonEnabled)
     }
-
-    private fun getError(exception: Exception) = when (exception) {
-//        is UnsupportedBlockchain -> R.string.error_unsupported_blockchain
-//        is InvalidAddress -> R.string.send_bottom_sheet_error_invalid_address
-//        is NotEnoughFundsException -> R.string.send_insufficient_funds
-        else -> R.string.error
-    }
-
-    private fun formatCryptoAmount(amount: Double) = NumberFormatHelper.cryptoAmountFormat.format(amount)
-
-    private fun formatFiatAmount(amount: Double) = NumberFormatHelper.fiatAmountFormat.format(amount)
 
 }
